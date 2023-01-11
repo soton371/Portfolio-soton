@@ -136,7 +136,6 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
           child: Card(
             color: AppColors().cardColor,
             elevation: 1,
-            // shadowColor: Colors.white,
             child: Container(
               padding: EdgeInsets.all(15.0),
               child: Column(
