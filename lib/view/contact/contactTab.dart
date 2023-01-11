@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/appClass.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../resource/colors.dart';
 import '../../resource/strings.dart';
@@ -73,7 +74,24 @@ class _ContactTabState extends State<ContactTab> {
               Padding(
                 padding: EdgeInsets.only(top: 50, bottom: 70),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () async{
+                    String? encodeQueryParameters(Map<String, String> params) {
+                      return params.entries
+                          .map((MapEntry<String, String> e) =>
+                      '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                          .join('&');
+                    }
+                    final Uri emailLaunchUri = Uri(
+                      scheme: 'mailto',
+                      path: 'soton371@gmail.com',
+                      query: encodeQueryParameters(<String, String>{
+                        'subject': 'Meet',
+                        'body': 'Hello, Soton Ahmed'
+                      }),
+                    );
+
+                    launchUrl(emailLaunchUri);
+                  },
                   child: Container(
                     height: AppClass().getMqHeight(context) * 0.09,
                     width: AppClass().getMqWidth(context) * 0.15,
