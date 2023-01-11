@@ -126,7 +126,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
           margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
           child: Card(
             color: AppColors().cardColor,
-            elevation: 10,
+            elevation: 1,
             child: Container(
               padding: EdgeInsets.all(15.0),
               child: Column(
@@ -145,7 +145,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                         'assets/svg/externalLink.svg',
                         width: 20,
                         height: 20,
-                        color: isHovered ? AppColors().neonColor : Colors.white,
+                        color: isHovered ? AppColors().neonColor : AppColors().textLight,
                       ),
                     ],
                   ),
@@ -159,7 +159,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                           style: GoogleFonts.robotoSlab(
                               color: isHovered
                                   ? AppColors().neonColor
-                                  : Colors.white,
+                                  : AppColors().textColor,
                               letterSpacing: 1,
                               fontWeight: FontWeight.bold,
                               fontSize: 18),
