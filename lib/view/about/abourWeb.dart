@@ -212,13 +212,15 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                                     image: DecorationImage(
                                         fit: BoxFit.cover,
                                         colorFilter: ColorFilter.mode(
-                                            AppColors().primaryColor,
+                                          Color(0xff252525),
                                             isHovered
                                                 ? BlendMode.lighten
-                                                : BlendMode.color),
+                                                : BlendMode.color,
+                                        ),
                                         image: AssetImage(
                                             'assets/svg/profilePic.jpg')),
-                                    color: Colors.transparent),
+                                    color: Colors.transparent,
+                                ),
                               ),
                             ),
                           ],

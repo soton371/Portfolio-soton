@@ -19,6 +19,7 @@ dependencies:
   url_launcher: ^6.1.5 #URLauncher
   scroll_to_index: ^3.0.1 #scrollToIndex
   flutter_advanced_drawer: ^1.3.2
+  iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
