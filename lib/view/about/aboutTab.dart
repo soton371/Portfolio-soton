@@ -39,7 +39,7 @@ class _AboutTabState extends State<AboutTab> {
                       TextSpan(
                         text: ' About Me',
                         style: GoogleFonts.robotoSlab(
-                            color: Colors.white,
+                            color: AppColors().textColor,
                             letterSpacing: 1,
                             fontWeight: FontWeight.bold,
                             fontSize: 25),
