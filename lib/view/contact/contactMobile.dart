@@ -18,9 +18,10 @@ class _ContactMobileState extends State<ContactMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppClass().getMqHeight(context) - 70,
+      // height: AppClass().getMqHeight(context) - 70,
+      margin: EdgeInsets.only(top: 50),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             children: [
@@ -112,6 +113,7 @@ class _ContactMobileState extends State<ContactMobile> {
               )
             ],
           ),
+          SizedBox(height: 80,),
           Column(
             children: [
               Text(

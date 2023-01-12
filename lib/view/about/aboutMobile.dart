@@ -116,12 +116,12 @@ class _AboutMobileState extends State<AboutMobile> {
                       child: GridView.count(
                           crossAxisCount: 2,
                           shrinkWrap: true,
-                          childAspectRatio: 10,
+                          childAspectRatio: 5,
                           children: [
                             Row(
                               children: [
                                 Icon(Icons.arrow_right),
-                                Text(' Flutter',
+                                Text(Strings.tech1,
                                     style: GoogleFonts.robotoFlex(
                                       color: AppColors().textLight,
                                       letterSpacing: 1,

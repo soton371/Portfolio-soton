@@ -100,8 +100,8 @@ class _IntroMobileState extends State<IntroMobile> {
                         preferPosition: AutoScrollPosition.begin);
                   },
                   child: Container(
-                    height: AppClass().getMqHeight(context) * 0.09,
-                    width: AppClass().getMqWidth(context) * 0.45,
+                    height: 50,
+                    width: 200,
                     decoration: BoxDecoration(
                         color: Colors.transparent,
                         borderRadius: BorderRadius.all(Radius.circular(3.0)),

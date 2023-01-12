@@ -18,9 +18,10 @@ class _ContactTabState extends State<ContactTab> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppClass().getMqHeight(context) - 70,
+      // height: AppClass().getMqHeight(context) - 70,
+      margin: EdgeInsets.only(top: 50),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Column(
             children: [
@@ -93,7 +94,7 @@ class _ContactTabState extends State<ContactTab> {
                     launchUrl(emailLaunchUri);
                   },
                   child: Container(
-                    height: AppClass().getMqHeight(context) * 0.09,
+                    height: 50,
                     width: AppClass().getMqWidth(context) * 0.15,
                     decoration: BoxDecoration(
                         color: Colors.transparent,
@@ -114,6 +115,7 @@ class _ContactTabState extends State<ContactTab> {
               )
             ],
           ),
+          SizedBox(height: 50,),
           Column(
             children: [
               Text(

@@ -121,9 +121,9 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
       },
       child: Consumer(builder: (context, ref, child) {
         String data = ref.watch(hoverProvider);
-        bool isHovered = (data == "$index");
+        // bool isHovered = (data == "$index");
         return Container(
-          margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
+          // margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
           child: Card(
             color: AppColors().cardColor,
             elevation: 1,
@@ -145,7 +145,8 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                         'assets/svg/externalLink.svg',
                         width: 20,
                         height: 20,
-                        color: isHovered ? AppColors().neonColor : AppColors().textLight,
+                        color: AppColors().textLight,
+                        // color: isHovered ? AppColors().neonColor : AppColors().textLight,
                       ),
                     ],
                   ),
@@ -157,9 +158,10 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                           AppClass().projectList[index].projectTitle.toString(),
                           textAlign: TextAlign.left,
                           style: GoogleFonts.robotoSlab(
-                              color: isHovered
-                                  ? AppColors().neonColor
-                                  : AppColors().textColor,
+                              color: AppColors().textColor,
+                              // color: isHovered
+                              //     ? AppColors().neonColor
+                              //     : AppColors().textColor,
                               letterSpacing: 1,
                               fontWeight: FontWeight.bold,
                               fontSize: 16),
@@ -205,7 +207,6 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                         style: GoogleFonts.roboto(
                           color: AppColors().textLight,
                           letterSpacing: 1,
-                          height: 1.5,
                           fontSize: 10,
                         ),
                       ),

@@ -101,7 +101,7 @@ class _IntroTabState extends State<IntroTab> {
                         preferPosition: AutoScrollPosition.begin);
                   },
                   child: Container(
-                    height: AppClass().getMqHeight(context) * 0.09,
+                    height: 50,
                     width: AppClass().getMqWidth(context) * 0.25,
                     decoration: BoxDecoration(
                         color: Colors.transparent,

@@ -30,8 +30,10 @@ class _RootScreenState extends ConsumerState<RootScreen> {
   void _handleMenuButtonPressed() {
     _advancedDrawerController.showDrawer();
   }
+
   @override
   Widget build(BuildContext context) {
+    ScreenType scrType = AppClass().getScreenType(context);
     return AdvancedDrawer(
         backdropColor: AppColors().textLight,
         controller: _advancedDrawerController,
@@ -39,7 +41,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
         animationDuration: const Duration(milliseconds: 300),
         animateChildDecoration: true,
         rtlOpening: true,
-        openRatio: 0.3,
+        openRatio: scrType == ScreenType.mobile? 0.39 : 0.2,
         disabledGestures: false,
         childDecoration: const BoxDecoration(
           borderRadius: const BorderRadius.all(Radius.circular(16)),
@@ -75,7 +77,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                         opacity: isScrollingUp ? 1.0 : 0.0,
                         duration: const Duration(milliseconds: 500),
                         child: (){
-                          ScreenType scrType = AppClass().getScreenType(context);
+                          // ScreenType scrType = AppClass().getScreenType(context);
                           if (scrType == ScreenType.mobile || scrType == ScreenType.tab) {
                             return Row(
                               children: [
@@ -110,180 +112,183 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                               ],
                             );
                           }
-                          return Row(
-                            children: [
-                              Expanded(
-                                  child: Container(
-                                    height: 40,
-                                    width: 80,
-                                    decoration: BoxDecoration(
-                                        color: Colors.transparent,
-                                        borderRadius:
-                                        BorderRadius.all(Radius.circular(3.0)),
-                                        border: Border.all(
-                                            color: AppColors().neonColor, width: 1.5)),
-                                    child: Center(
-                                      child: Text('Soton',
-                                          style: TextStyle(
-                                              color: AppColors().neonColor,
-                                              fontSize: 13,
-                                              letterSpacing: 1,
-                                              fontWeight: FontWeight.bold,
-                                              fontFamily: 'sfmono')),
-                                    ),
-                                  )
-                              ),
-                              Expanded(
-                                flex: 9,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    /*Text(scrType.name),*/
-                                    InkWell(
-                                      onTap: () {
-                                        aScrollController.scrollToIndex(1,
-                                            preferPosition: AutoScrollPosition.begin);
-                                      },
-                                      onHover: (bol) {
-                                        if (bol) {
-                                          ref.read(hoverProvider.notifier).state = "aboutTitle";
-                                        } else {
-                                          ref.read(hoverProvider.notifier).state = "";
-                                        }
-                                      },
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(right: 30.0),
-                                        child: Row(
-                                          children: [
-                                            Text("01. ",
-                                                style: TextStyle(
-                                                    color: AppColors().neonColor,
-                                                    fontSize: 13,
-                                                    fontFamily: 'sfmono')),
-                                            Consumer(builder: (context, ref, child) {
-                                              String state = ref.watch(hoverProvider);
-                                              bool isHovered = (state == "aboutTitle");
-                                              return Text("About",
+                          return Container(
+                            height: 70,
+                            padding: EdgeInsets.only(right: 55.0, top: 30.0,left: 55.00),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                    child: Container(
+                                      height: 40,
+                                      width: 80,
+                                      decoration: BoxDecoration(
+                                          color: Colors.transparent,
+                                          borderRadius:
+                                          BorderRadius.all(Radius.circular(3.0)),
+                                          border: Border.all(
+                                              color: AppColors().neonColor, width: 1.5)),
+                                      child: Center(
+                                        child: Text('Soton',
+                                            style: TextStyle(
+                                                color: AppColors().neonColor,
+                                                fontSize: 13,
+                                                letterSpacing: 1,
+                                                fontWeight: FontWeight.bold,
+                                                fontFamily: 'sfmono')),
+                                      ),
+                                    )
+                                ),
+                                Expanded(
+                                  flex: 9,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      /*Text(scrType.name),*/
+                                      InkWell(
+                                        onTap: () {
+                                          aScrollController.scrollToIndex(1,
+                                              preferPosition: AutoScrollPosition.begin);
+                                        },
+                                        onHover: (bol) {
+                                          if (bol) {
+                                            ref.read(hoverProvider.notifier).state = "aboutTitle";
+                                          } else {
+                                            ref.read(hoverProvider.notifier).state = "";
+                                          }
+                                        },
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(right: 30.0),
+                                          child: Row(
+                                            children: [
+                                              Text("01. ",
                                                   style: TextStyle(
-                                                      color: isHovered
-                                                          ? AppColors().neonColor
-                                                          : AppColors().textColor,
+                                                      color: AppColors().neonColor,
                                                       fontSize: 13,
-                                                      fontFamily: 'sfmono'));
-                                            }),
-                                          ],
+                                                      fontFamily: 'sfmono')),
+                                              Consumer(builder: (context, ref, child) {
+                                                String state = ref.watch(hoverProvider);
+                                                bool isHovered = (state == "aboutTitle");
+                                                return Text("About",
+                                                    style: TextStyle(
+                                                        color: isHovered
+                                                            ? AppColors().neonColor
+                                                            : AppColors().textColor,
+                                                        fontSize: 13,
+                                                        fontFamily: 'sfmono'));
+                                              }),
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        aScrollController.scrollToIndex(2,
-                                            preferPosition: AutoScrollPosition.begin);
-                                      },
-                                      onHover: (bol) {
-                                        if (bol) {
-                                          ref.read(hoverProvider.notifier).state = "expTitle";
-                                        } else {
-                                          ref.read(hoverProvider.notifier).state = "";
-                                        }
-                                      },
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(right: 30.0),
-                                        child: Row(
-                                          children: [
-                                            Text("02. ",
-                                                style: TextStyle(
-                                                    color: AppColors().neonColor,
-                                                    fontSize: 13,
-                                                    fontFamily: 'sfmono')),
-                                            Consumer(builder: (context, ref, child) {
-                                              String state = ref.watch(hoverProvider);
-                                              bool isHovered = (state == "expTitle");
-                                              return Text("Experience",
+                                      InkWell(
+                                        onTap: () {
+                                          aScrollController.scrollToIndex(2,
+                                              preferPosition: AutoScrollPosition.begin);
+                                        },
+                                        onHover: (bol) {
+                                          if (bol) {
+                                            ref.read(hoverProvider.notifier).state = "expTitle";
+                                          } else {
+                                            ref.read(hoverProvider.notifier).state = "";
+                                          }
+                                        },
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(right: 30.0),
+                                          child: Row(
+                                            children: [
+                                              Text("02. ",
                                                   style: TextStyle(
-                                                      color: isHovered
-                                                          ? AppColors().neonColor
-                                                          : AppColors().textColor,
+                                                      color: AppColors().neonColor,
                                                       fontSize: 13,
-                                                      fontFamily: 'sfmono'));
-                                            }),
-                                          ],
+                                                      fontFamily: 'sfmono')),
+                                              Consumer(builder: (context, ref, child) {
+                                                String state = ref.watch(hoverProvider);
+                                                bool isHovered = (state == "expTitle");
+                                                return Text("Experience",
+                                                    style: TextStyle(
+                                                        color: isHovered
+                                                            ? AppColors().neonColor
+                                                            : AppColors().textColor,
+                                                        fontSize: 13,
+                                                        fontFamily: 'sfmono'));
+                                              }),
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        aScrollController.scrollToIndex(3,
-                                            preferPosition: AutoScrollPosition.begin);
-                                      },
-                                      onHover: (bol) {
-                                        if (bol) {
-                                          ref.read(hoverProvider.notifier).state = "workTitle";
-                                        } else {
-                                          ref.read(hoverProvider.notifier).state = "";
-                                        }
-                                      },
-                                      child: Padding(
-                                        padding: const EdgeInsets.only(right: 30.0),
-                                        child: Row(
-                                          children: [
-                                            Text("03. ",
-                                                style: TextStyle(
-                                                    color: AppColors().neonColor,
-                                                    fontSize: 13,
-                                                    fontFamily: 'sfmono')),
-                                            Consumer(builder: (context, ref, child) {
-                                              String state = ref.watch(hoverProvider);
-                                              bool isHovered = (state == "workTitle");
+                                      InkWell(
+                                        onTap: () {
+                                          aScrollController.scrollToIndex(3,
+                                              preferPosition: AutoScrollPosition.begin);
+                                        },
+                                        onHover: (bol) {
+                                          if (bol) {
+                                            ref.read(hoverProvider.notifier).state = "workTitle";
+                                          } else {
+                                            ref.read(hoverProvider.notifier).state = "";
+                                          }
+                                        },
+                                        child: Padding(
+                                          padding: const EdgeInsets.only(right: 30.0),
+                                          child: Row(
+                                            children: [
+                                              Text("03. ",
+                                                  style: TextStyle(
+                                                      color: AppColors().neonColor,
+                                                      fontSize: 13,
+                                                      fontFamily: 'sfmono')),
+                                              Consumer(builder: (context, ref, child) {
+                                                String state = ref.watch(hoverProvider);
+                                                bool isHovered = (state == "workTitle");
 
-                                              return Text("Work",
+                                                return Text("Work",
+                                                    style: TextStyle(
+                                                        color: isHovered
+                                                            ? AppColors().neonColor
+                                                            : AppColors().textColor,
+                                                        fontSize: 13,
+                                                        fontFamily: 'sfmono'));
+                                              }),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      InkWell(
+                                        onTap: () {
+                                          aScrollController.scrollToIndex(4,
+                                              preferPosition: AutoScrollPosition.begin);
+                                        },
+                                        onHover: (bol) {
+                                          if (bol) {
+                                            ref.read(hoverProvider.notifier).state =
+                                            "contactTitle";
+                                          } else {
+                                            ref.read(hoverProvider.notifier).state = "";
+                                          }
+                                        },
+                                        child: Row(
+                                          children: [
+                                            Text("04.",
+                                                style: TextStyle(
+                                                    color: AppColors().neonColor,
+                                                    fontSize: 13,
+                                                    fontFamily: 'sfmono')),
+                                            Consumer(builder: (context, ref, child) {
+                                              String state = ref.watch(hoverProvider);
+                                              bool isHovered = (state == "contactTitle");
+                                              return Text("Contact",
                                                   style: TextStyle(
                                                       color: isHovered
                                                           ? AppColors().neonColor
                                                           : AppColors().textColor,
-                                                      fontSize: 13,
-                                                      fontFamily: 'sfmono'));
+                                                      fontSize: 13));
                                             }),
                                           ],
                                         ),
                                       ),
-                                    ),
-                                    InkWell(
-                                      onTap: () {
-                                        aScrollController.scrollToIndex(4,
-                                            preferPosition: AutoScrollPosition.begin);
-                                      },
-                                      onHover: (bol) {
-                                        if (bol) {
-                                          ref.read(hoverProvider.notifier).state =
-                                          "contactTitle";
-                                        } else {
-                                          ref.read(hoverProvider.notifier).state = "";
-                                        }
-                                      },
-                                      child: Row(
-                                        children: [
-                                          Text("04.",
-                                              style: TextStyle(
-                                                  color: AppColors().neonColor,
-                                                  fontSize: 13,
-                                                  fontFamily: 'sfmono')),
-                                          Consumer(builder: (context, ref, child) {
-                                            String state = ref.watch(hoverProvider);
-                                            bool isHovered = (state == "contactTitle");
-                                            return Text("Contact",
-                                                style: TextStyle(
-                                                    color: isHovered
-                                                        ? AppColors().neonColor
-                                                        : AppColors().textColor,
-                                                    fontSize: 13));
-                                          }),
-                                        ],
-                                      ),
-                                    ),
 
-                                    //for cv
-                                    /*InkWell(
+                                      //for cv
+                                      /*InkWell(
                       onTap: () {
                         AppClass().downloadResume(context);
                       },
@@ -291,27 +296,28 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                         height: 40,
                         width: 80,
                         decoration: BoxDecoration(
-                            color: Colors.transparent,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(3.0)),
-                            border: Border.all(
-                                color: AppColors().neonColor, width: 1.5)),
+                              color: Colors.transparent,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(3.0)),
+                              border: Border.all(
+                                  color: AppColors().neonColor, width: 1.5)),
                         child: Center(
-                          child: Text('Resume',
-                              style: TextStyle(
-                                  color: AppColors().neonColor,
-                                  fontSize: 13,
-                                  letterSpacing: 1,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: 'sfmono')),
+                            child: Text('Resume',
+                                style: TextStyle(
+                                    color: AppColors().neonColor,
+                                    fontSize: 13,
+                                    letterSpacing: 1,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: 'sfmono')),
                         ),
                       ),
                     ),*/
-                                    //end cv
-                                  ],
+                                      //end cv
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           );
                         }()
                         // child: ActionBar(aScrollController),
@@ -388,56 +394,67 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                 children: [
                   SizedBox(height: 50,),
                   CircleAvatar(
-                    radius: 50,
+                    radius: 40,
                     backgroundImage: AssetImage("assets/svg/profilePic.jpg"),
                   ),
                   SizedBox(height: 50,),
-                  /*Container(
-                    width: 128.0,
-                    height: 128.0,
-                    margin: const EdgeInsets.only(
-                      top: 24.0,
-                      bottom: 64.0,
-                    ),
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(
-                      color: Colors.blueAccent,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Image.asset(
-                      'assets/svg/profilePic.jpg',
-                    ),
-                  ),*/
 
                   ListTile(
                     onTap: () =>aScrollController.scrollToIndex(1,
                         preferPosition: AutoScrollPosition.begin),
-                    leading: Icon(Iconsax.user_octagon),
-                    title: Text('About',
-                    style: TextStyle(
-                        fontFamily: 'sfmono'),
+                    title: Row(
+                      children: [
+                        Icon(Iconsax.user_octagon,size: scrType == ScreenType.mobile? 13:14),
+                        Text(' About',
+                        style: TextStyle(
+                            fontFamily: 'sfmono',
+                          fontSize: scrType == ScreenType.mobile? 13:14
+                        ),
+                        ),
+                      ],
                     ),
                   ),
                   ListTile(
                     onTap: () =>aScrollController.scrollToIndex(2,
                       preferPosition: AutoScrollPosition.begin),
-                    leading: Icon(Iconsax.code),
-                    title: Text('Experience',style: TextStyle(
-                        fontFamily: 'sfmono'),),
+                    // leading: Icon(Iconsax.code,size: scrType == ScreenType.mobile? 13:14),
+                    title: Row(
+                      children: [
+                        Icon(Iconsax.code,size: scrType == ScreenType.mobile? 13:14),
+                        Text(' Experience',style: TextStyle(
+                            fontFamily: 'sfmono',
+                            fontSize: scrType == ScreenType.mobile? 13:14
+                        ),),
+                      ],
+                    ),
                   ),
                   ListTile(
                     onTap: () =>aScrollController.scrollToIndex(3,
                         preferPosition: AutoScrollPosition.begin),
-                    leading: Icon(Iconsax.task_square),
-                    title: Text('Work',style: TextStyle(
-                        fontFamily: 'sfmono'),),
+                    // leading: Icon(Iconsax.task_square,size: scrType == ScreenType.mobile? 13:14),
+                    title: Row(
+                      children: [
+                        Icon(Iconsax.task_square,size: scrType == ScreenType.mobile? 13:14),
+                        Text(' Work',style: TextStyle(
+                            fontFamily: 'sfmono',
+                            fontSize: scrType == ScreenType.mobile? 13:14
+                        ),),
+                      ],
+                    ),
                   ),
                   ListTile(
                     onTap: () =>aScrollController.scrollToIndex(4,
                         preferPosition: AutoScrollPosition.begin),
-                    leading: Icon(Iconsax.message),
-                    title: Text('Contact',style: TextStyle(
-                        fontFamily: 'sfmono'),),
+                    // leading: Icon(Iconsax.message,size: scrType == ScreenType.mobile? 13:14,),
+                    title: Row(
+                      children: [
+                        Icon(Iconsax.message,size: scrType == ScreenType.mobile? 13:14,),
+                        Text(' Contact',style: TextStyle(
+                            fontFamily: 'sfmono',
+                            fontSize: scrType == ScreenType.mobile? 13:14
+                        ),),
+                      ],
+                    ),
                   ),
                   Spacer(),
                   DefaultTextStyle(
@@ -460,184 +477,3 @@ class _RootScreenState extends ConsumerState<RootScreen> {
     );
   }
 }
-
-/*PopupMenuButton(
-                                        color: AppColors().cardColor,
-                                        itemBuilder: (c) => <PopupMenuEntry>[
-                                          PopupMenuItem(
-                                            child: Container(
-                                                width: 90.0,
-                                                child: InkWell(
-                                                  onTap: () => widget.controller.scrollToIndex(
-                                                      1,
-                                                      preferPosition: AutoScrollPosition.begin),
-                                                  child: Row(
-                                                    children: [
-                                                      Icon(Icons.account_circle_rounded,
-                                                          size: 18),
-                                                      Padding(
-                                                        padding:
-                                                        const EdgeInsets.only(left: 10.0),
-                                                        child: Text(
-                                                          'About',
-                                                          style: GoogleFonts.roboto(),
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                )),
-                                          ),
-                                          PopupMenuItem(
-                                            child: InkWell(
-                                              onTap: () => widget.controller.scrollToIndex(2,
-                                                  preferPosition: AutoScrollPosition.begin),
-                                              child: Row(
-                                                children: [
-                                                  Icon(Icons.travel_explore_rounded, size: 18),
-                                                  Padding(
-                                                    padding: const EdgeInsets.only(left: 10.0),
-                                                    child: Text(
-                                                      'Experience',
-                                                      style: GoogleFonts.roboto(),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                          PopupMenuItem(
-                                            child: InkWell(
-                                              onTap: () => widget.controller.scrollToIndex(3,
-                                                  preferPosition: AutoScrollPosition.begin),
-                                              child: Row(
-                                                children: [
-                                                  Icon(Icons.computer_rounded, size: 18),
-                                                  Padding(
-                                                    padding: const EdgeInsets.only(left: 10.0),
-                                                    child: Text(
-                                                      'Work',
-                                                      style: GoogleFonts.roboto(),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                          PopupMenuItem(
-                                            child: InkWell(
-                                              onTap: () => widget.controller.scrollToIndex(4,
-                                                  preferPosition: AutoScrollPosition.begin),
-                                              child: Row(
-                                                children: [
-                                                  Icon(Icons.phone_rounded, size: 18),
-                                                  Padding(
-                                                    padding: const EdgeInsets.only(left: 10.0),
-                                                    child: Text(
-                                                      'Contact',
-                                                      style: GoogleFonts.roboto(),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                        child: Icon(Icons.menu_rounded, size: 25, color: AppColors().textLight,),
-                                      )*/
-
-/*
-SafeArea(
-      child: Scaffold(
-        body: NotificationListener<UserScrollNotification>(
-          onNotification: (notification) {
-            final ScrollDirection direction = notification.direction;
-            if (direction == ScrollDirection.reverse) {
-              ref.read(scrollControlProvider.notifier).state = false;
-            } else if (direction == ScrollDirection.forward) {
-              ref.read(scrollControlProvider.notifier).state = true;
-            }
-            return true;
-          },
-          child: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.topCenter,
-                    colors: [
-                  Color(0xffffffff),
-                  Color(0xfffdf5ee)
-                ])),
-            height: AppClass().getMqHeight(context),
-            child: Column(
-              children: [
-                //for appbar
-                Consumer(builder: (context, ref, child) {
-                  var isScrollingUp = ref.watch(scrollControlProvider);
-                  return AnimatedOpacity(
-                    opacity: isScrollingUp ? 1.0 : 0.0,
-                    duration: const Duration(milliseconds: 500),
-                    child: ActionBar(aScrollController),
-                  );
-                }),
-                //end appbar
-
-                //for all body
-                Expanded(
-                  child: () {
-                    ScreenType scrType = AppClass().getScreenType(context);
-                    return Row(
-                      children: [
-                        //for left panel
-                        scrType == ScreenType.mobile ? SizedBox() : LeftPane(),
-                        //end left panel
-
-                        //for content
-                        Expanded(
-                            flex: 8,
-                            child: ListView(
-                              controller: aScrollController,
-                              children: [
-                                AutoScrollTag(
-                                    key: ValueKey(0),
-                                    controller: aScrollController,
-                                    index: 0,
-                                    child: IntroContent(aScrollController)),
-                                AutoScrollTag(
-                                    key: ValueKey(1),
-                                    controller: aScrollController,
-                                    index: 1,
-                                    child: About()),
-                                AutoScrollTag(
-                                    key: ValueKey(2),
-                                    controller: aScrollController,
-                                    index: 2,
-                                    child: Experience()),
-                                AutoScrollTag(
-                                    key: ValueKey(3),
-                                    controller: aScrollController,
-                                    index: 3,
-                                    child: Work()),
-                                AutoScrollTag(
-                                    key: ValueKey(4),
-                                    controller: aScrollController,
-                                    index: 4,
-                                    child: Contact())
-                              ],
-                            )),
-                        //end content
-
-                        //for right panel
-                        scrType == ScreenType.mobile ? SizedBox() : RightPane(),
-                        //end right panel
-                      ],
-                    );
-                  }(),
-                ),
-                //end all body
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
- */
