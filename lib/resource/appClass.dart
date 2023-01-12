@@ -32,7 +32,7 @@ class AppClass {
             "Arabic with Bengali pronunciation and Bengali meaning. Also find nearby mosques.",
         tech1: "Dart",
         tech2: "Flutter",
-        tech3: "Google Services",
+        tech3: "Firebase",
     ),
     WorkModel(
         projectTitle: "Smart Dokani",

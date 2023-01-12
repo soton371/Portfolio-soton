@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/resource/appClass.dart';
+import 'package:portfolio/resource/sizes.dart';
 
 import '../../controller/generalController.dart';
 import '../../model/experienceModel.dart';
@@ -222,7 +223,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
                             color: AppColors().textColor,
                             letterSpacing: 1,
                             fontWeight: FontWeight.bold,
-                            fontSize: 25),
+                            fontSize: AppSizes.titleSize),
                       )
                     ]),
               ),

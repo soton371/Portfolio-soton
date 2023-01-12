@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/resource/sizes.dart';
 
 import '../../resource/appClass.dart';
 import '../../resource/colors.dart';
@@ -42,7 +43,8 @@ class _AboutMobileState extends State<AboutMobile> {
                             color: AppColors().textColor,
                             letterSpacing: 1,
                             fontWeight: FontWeight.bold,
-                            fontSize: 25),
+                            fontSize: AppSizes.titleSize,
+                        ),
                       )
                     ]),
               ),

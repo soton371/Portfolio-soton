@@ -51,7 +51,7 @@ class _ContactMobileState extends State<ContactMobile> {
                     color: AppColors().textColor,
                     fontWeight: FontWeight.bold,
                     letterSpacing: 3,
-                    fontSize: 40,
+                    fontSize: 30,
                   ),
                 ),
               ),
@@ -71,44 +71,42 @@ class _ContactMobileState extends State<ContactMobile> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 50, bottom: 70),
-                child: InkWell(
-                  onTap: () async{
-                    String? encodeQueryParameters(Map<String, String> params) {
-                      return params.entries
-                          .map((MapEntry<String, String> e) =>
-                      '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
-                          .join('&');
-                    }
-                    final Uri emailLaunchUri = Uri(
-                      scheme: 'mailto',
-                      path: 'soton371@gmail.com',
-                      query: encodeQueryParameters(<String, String>{
-                        'subject': 'Meet',
-                        'body': 'Hello, Soton Ahmed'
-                      }),
-                    );
+              InkWell(
+                onTap: () async{
+                  String? encodeQueryParameters(Map<String, String> params) {
+                    return params.entries
+                        .map((MapEntry<String, String> e) =>
+                    '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                        .join('&');
+                  }
+                  final Uri emailLaunchUri = Uri(
+                    scheme: 'mailto',
+                    path: 'soton371@gmail.com',
+                    query: encodeQueryParameters(<String, String>{
+                      'subject': 'Meet',
+                      'body': 'Hello, Soton Ahmed'
+                    }),
+                  );
 
-                    launchUrl(emailLaunchUri);
-                  },
-                  child: Container(
-                    height: AppClass().getMqHeight(context) * 0.08,
-                    width: AppClass().getMqWidth(context) * 0.2,
-                    decoration: BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.all(Radius.circular(3.0)),
-                        border: Border.all(
-                            color: AppColors().neonColor, width: 1.5)),
-                    child: Center(
-                      child: Text('Say Hello!',
-                          style: TextStyle(
-                              color: AppColors().neonColor,
-                              fontSize: 10,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'sfmono')),
-                    ),
+                  launchUrl(emailLaunchUri);
+                },
+                child: Container(
+                  height: 50,
+                  width: 150,
+                  margin: EdgeInsets.symmetric(vertical: 50),
+                  decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.all(Radius.circular(3.0)),
+                      border: Border.all(
+                          color: AppColors().neonColor, width: 1.5)),
+                  child: Center(
+                    child: Text('Say Hello!',
+                        style: TextStyle(
+                            color: AppColors().neonColor,
+                            fontSize: 10,
+                            letterSpacing: 1,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'sfmono')),
                   ),
                 ),
               )
