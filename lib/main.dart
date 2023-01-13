@@ -14,7 +14,7 @@ class AppTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SOTON',
+      title: 'Soton',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // brightness: Brightness.dark,

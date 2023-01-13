@@ -81,11 +81,13 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                           if (scrType == ScreenType.mobile || scrType == ScreenType.tab) {
                             return Row(
                               children: [
-                                Expanded(
+                                /*Expanded(
                                     child: Padding(
                                         padding: const EdgeInsets.only(left: 20.0),
                                         child: Text('S',style: TextStyle(fontStyle: FontStyle.italic,color: AppColors().neonColor,fontSize: 20),)
-                                    )),
+                                    )),*/
+                                Image.asset('assets/svg/logo.png',height: 60,),
+
                                 Expanded(
                                   flex: 9,
                                   child: Row(
@@ -114,30 +116,12 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                           }
                           return Container(
                             height: 70,
-                            padding: EdgeInsets.only(right: 55.0, top: 30.0,left: 55.00),
+                            padding: EdgeInsets.only(right: 55.0, top: 10.0,left: 50.00),
                             child: Row(
                               children: [
-                                Expanded(
-                                    child: Container(
-                                      height: 40,
-                                      width: 80,
-                                      decoration: BoxDecoration(
-                                          color: Colors.transparent,
-                                          borderRadius:
-                                          BorderRadius.all(Radius.circular(3.0)),
-                                          border: Border.all(
-                                              color: AppColors().neonColor, width: 1.5)),
-                                      child: Center(
-                                        child: Text('Soton',
-                                            style: TextStyle(
-                                                color: AppColors().neonColor,
-                                                fontSize: 13,
-                                                letterSpacing: 1,
-                                                fontWeight: FontWeight.bold,
-                                                fontFamily: 'sfmono')),
-                                      ),
-                                    )
-                                ),
+                                Image.asset('assets/svg/logo.png'),
+
+                                //for menu items web
                                 Expanded(
                                   flex: 9,
                                   child: Row(
@@ -316,6 +300,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                                     ],
                                   ),
                                 ),
+                                //end menu items web
                               ],
                             ),
                           );
