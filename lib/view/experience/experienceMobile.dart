@@ -201,7 +201,7 @@ class _ExperienceMobileState extends State<ExperienceMobile> {
     ];
 
     return Container(
-      height: AppClass().getMqHeight(context) - 100,
+      padding: EdgeInsets.symmetric(vertical: 100),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
