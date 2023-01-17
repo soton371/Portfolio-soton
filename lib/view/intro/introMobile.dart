@@ -21,7 +21,7 @@ class _IntroMobileState extends State<IntroMobile> {
     return Container(
       color: Colors.transparent,
       // height: AppClass().getMqHeight(context) - 50,
-      margin: EdgeInsets.only(top: 50,bottom: 100),
+      margin: EdgeInsets.symmetric(vertical: 50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
