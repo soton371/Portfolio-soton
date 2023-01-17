@@ -81,11 +81,6 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                           if (scrType == ScreenType.mobile || scrType == ScreenType.tab) {
                             return Row(
                               children: [
-                                /*Expanded(
-                                    child: Padding(
-                                        padding: const EdgeInsets.only(left: 20.0),
-                                        child: Text('S',style: TextStyle(fontStyle: FontStyle.italic,color: AppColors().neonColor,fontSize: 20),)
-                                    )),*/
                                 Image.asset('assets/svg/logo.png',height: 60,),
 
                                 Expanded(
@@ -127,7 +122,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
-                                      /*Text(scrType.name),*/
+                                      //for about
                                       InkWell(
                                         onTap: () {
                                           aScrollController.scrollToIndex(1,
@@ -142,28 +137,22 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                                         },
                                         child: Padding(
                                           padding: const EdgeInsets.only(right: 30.0),
-                                          child: Row(
-                                            children: [
-                                              Text("01. ",
-                                                  style: TextStyle(
-                                                      color: AppColors().neonColor,
-                                                      fontSize: 13,
-                                                      fontFamily: 'sfmono')),
-                                              Consumer(builder: (context, ref, child) {
-                                                String state = ref.watch(hoverProvider);
-                                                bool isHovered = (state == "aboutTitle");
-                                                return Text("About",
-                                                    style: TextStyle(
-                                                        color: isHovered
-                                                            ? AppColors().neonColor
-                                                            : AppColors().textColor,
-                                                        fontSize: 13,
-                                                        fontFamily: 'sfmono'));
-                                              }),
-                                            ],
-                                          ),
+                                          child: Consumer(builder: (context, ref, child) {
+                                            String state = ref.watch(hoverProvider);
+                                            bool isHovered = (state == "aboutTitle");
+                                            return Text("About",
+                                                style: TextStyle(
+                                                    color: isHovered
+                                                        ? AppColors().neonColor
+                                                        : AppColors().textColor,
+                                                    fontSize: 13,
+                                                    fontFamily: 'sfmono'));
+                                          }),
                                         ),
                                       ),
+                                      //end about
+
+                                      //for Experience
                                       InkWell(
                                         onTap: () {
                                           aScrollController.scrollToIndex(2,
@@ -178,28 +167,22 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                                         },
                                         child: Padding(
                                           padding: const EdgeInsets.only(right: 30.0),
-                                          child: Row(
-                                            children: [
-                                              Text("02. ",
-                                                  style: TextStyle(
-                                                      color: AppColors().neonColor,
-                                                      fontSize: 13,
-                                                      fontFamily: 'sfmono')),
-                                              Consumer(builder: (context, ref, child) {
-                                                String state = ref.watch(hoverProvider);
-                                                bool isHovered = (state == "expTitle");
-                                                return Text("Experience",
-                                                    style: TextStyle(
-                                                        color: isHovered
-                                                            ? AppColors().neonColor
-                                                            : AppColors().textColor,
-                                                        fontSize: 13,
-                                                        fontFamily: 'sfmono'));
-                                              }),
-                                            ],
-                                          ),
+                                          child: Consumer(builder: (context, ref, child) {
+                                            String state = ref.watch(hoverProvider);
+                                            bool isHovered = (state == "expTitle");
+                                            return Text("Experience",
+                                                style: TextStyle(
+                                                    color: isHovered
+                                                        ? AppColors().neonColor
+                                                        : AppColors().textColor,
+                                                    fontSize: 13,
+                                                    fontFamily: 'sfmono'));
+                                          }),
                                         ),
                                       ),
+                                      //end Experience
+
+                                      //for Work
                                       InkWell(
                                         onTap: () {
                                           aScrollController.scrollToIndex(3,
@@ -214,29 +197,23 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                                         },
                                         child: Padding(
                                           padding: const EdgeInsets.only(right: 30.0),
-                                          child: Row(
-                                            children: [
-                                              Text("03. ",
-                                                  style: TextStyle(
-                                                      color: AppColors().neonColor,
-                                                      fontSize: 13,
-                                                      fontFamily: 'sfmono')),
-                                              Consumer(builder: (context, ref, child) {
-                                                String state = ref.watch(hoverProvider);
-                                                bool isHovered = (state == "workTitle");
+                                          child: Consumer(builder: (context, ref, child) {
+                                            String state = ref.watch(hoverProvider);
+                                            bool isHovered = (state == "workTitle");
 
-                                                return Text("Work",
-                                                    style: TextStyle(
-                                                        color: isHovered
-                                                            ? AppColors().neonColor
-                                                            : AppColors().textColor,
-                                                        fontSize: 13,
-                                                        fontFamily: 'sfmono'));
-                                              }),
-                                            ],
-                                          ),
+                                            return Text("Work",
+                                                style: TextStyle(
+                                                    color: isHovered
+                                                        ? AppColors().neonColor
+                                                        : AppColors().textColor,
+                                                    fontSize: 13,
+                                                    fontFamily: 'sfmono'));
+                                          }),
                                         ),
                                       ),
+                                      //end Work
+
+                                      //for Contact
                                       InkWell(
                                         onTap: () {
                                           aScrollController.scrollToIndex(4,
@@ -250,53 +227,18 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                                             ref.read(hoverProvider.notifier).state = "";
                                           }
                                         },
-                                        child: Row(
-                                          children: [
-                                            Text("04.",
-                                                style: TextStyle(
-                                                    color: AppColors().neonColor,
-                                                    fontSize: 13,
-                                                    fontFamily: 'sfmono')),
-                                            Consumer(builder: (context, ref, child) {
-                                              String state = ref.watch(hoverProvider);
-                                              bool isHovered = (state == "contactTitle");
-                                              return Text("Contact",
-                                                  style: TextStyle(
-                                                      color: isHovered
-                                                          ? AppColors().neonColor
-                                                          : AppColors().textColor,
-                                                      fontSize: 13));
-                                            }),
-                                          ],
-                                        ),
+                                        child: Consumer(builder: (context, ref, child) {
+                                          String state = ref.watch(hoverProvider);
+                                          bool isHovered = (state == "contactTitle");
+                                          return Text("Contact",
+                                              style: TextStyle(
+                                                  color: isHovered
+                                                      ? AppColors().neonColor
+                                                      : AppColors().textColor,
+                                                  fontSize: 13));
+                                        }),
                                       ),
-
-                                      //for cv
-                                      /*InkWell(
-                      onTap: () {
-                        AppClass().downloadResume(context);
-                      },
-                      child: Container(
-                        height: 40,
-                        width: 80,
-                        decoration: BoxDecoration(
-                              color: Colors.transparent,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(3.0)),
-                              border: Border.all(
-                                  color: AppColors().neonColor, width: 1.5)),
-                        child: Center(
-                            child: Text('Resume',
-                                style: TextStyle(
-                                    color: AppColors().neonColor,
-                                    fontSize: 13,
-                                    letterSpacing: 1,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'sfmono')),
-                        ),
-                      ),
-                    ),*/
-                                      //end cv
+                                      //end Contact
                                     ],
                                   ),
                                 ),
