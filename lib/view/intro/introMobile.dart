@@ -20,7 +20,8 @@ class _IntroMobileState extends State<IntroMobile> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.transparent,
-      height: AppClass().getMqHeight(context) - 50,
+      // height: AppClass().getMqHeight(context) - 50,
+      margin: EdgeInsets.only(top: 50,bottom: 100),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
