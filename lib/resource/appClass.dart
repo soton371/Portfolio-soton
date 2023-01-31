@@ -117,7 +117,7 @@ class AppClass {
                 actions: [
                   ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          primary: Colors.green
+                          backgroundColor: Colors.green
                       ),
                       onPressed: () => Navigator.pop(context),
                       child: Text('Okay'))

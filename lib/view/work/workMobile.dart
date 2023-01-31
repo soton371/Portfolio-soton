@@ -120,7 +120,6 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
         }
       },
       child: Consumer(builder: (context, ref, child) {
-        String data = ref.watch(hoverProvider);
         // bool isHovered = (data == "$index");
         return Container(
           // margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
