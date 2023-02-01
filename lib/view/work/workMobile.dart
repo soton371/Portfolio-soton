@@ -88,23 +88,23 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
       onTap: () async {
         switch (index) {
           case 0:
-            await launchUrl(Uri.parse(AppClass.rahma));
+            await launchUrl(Uri.parse(AppClass.zappAppSocial));
             break;
 
           case 1:
-            await launchUrl(Uri.parse(AppClass.smartDokani));
+            await launchUrl(Uri.parse(AppClass.meekago));
             break;
 
           case 2:
-            await launchUrl(Uri.parse(AppClass.medicalSurveyReport));
+            await launchUrl(Uri.parse(AppClass.smartDokani));
             break;
 
           case 3:
-            await launchUrl(Uri.parse(AppClass.dokandar));
+            await launchUrl(Uri.parse(AppClass.medicalSurveyReport));
             break;
 
           case 4:
-            await launchUrl(Uri.parse(AppClass.meekago));
+            await launchUrl(Uri.parse(AppClass.rahma));
             break;
 
           case 5:
