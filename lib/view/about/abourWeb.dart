@@ -218,7 +218,7 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
                                                 : BlendMode.color,
                                         ),
                                         image: AssetImage(
-                                            'assets/svg/profilePic.jpg')),
+                                            'assets/svg/aboutPic.jpeg')),
                                     color: Colors.transparent,
                                 ),
                               ),
