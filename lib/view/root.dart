@@ -266,6 +266,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                                 flex: 8,
                                 child: ListView(
                                   controller: aScrollController,
+                                  physics: BouncingScrollPhysics(),
                                   children: [
                                     AutoScrollTag(
                                         key: ValueKey(0),
