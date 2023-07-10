@@ -17,7 +17,8 @@ class _ContactWebState extends State<ContactWeb> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppClass().getMqHeight(context) - 70,
+      // height: AppClass().getMqHeight(context) - 70,
+      padding: EdgeInsets.only(top: 50),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -113,6 +114,7 @@ class _ContactWebState extends State<ContactWeb> {
               )
             ],
           ),
+          SizedBox(height: 50,),
           Column(
             children: [
               Text(

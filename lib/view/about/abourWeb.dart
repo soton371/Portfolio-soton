@@ -20,7 +20,7 @@ class _AboutWebState extends ConsumerState<AboutWeb> {
       margin: EdgeInsets.only(
           left: AppClass().getMqWidth(context) * 0.03,
           right: AppClass().getMqWidth(context) * 0.03),
-      padding: EdgeInsets.only(bottom: 40),
+      padding: EdgeInsets.only(bottom: 40,top: 100),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
