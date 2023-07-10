@@ -322,7 +322,7 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                   SizedBox(height: 50,),
                   CircleAvatar(
                     radius: 40,
-                    backgroundImage: AssetImage("assets/svg/profilePic.jpg"),
+                    backgroundImage: AssetImage("assets/svg/aboutPic.jpeg"),
                   ),
                   SizedBox(height: 50,),
 
