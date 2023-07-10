@@ -17,9 +17,7 @@ class _AboutMobileState extends State<AboutMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(
-        vertical: 100,horizontal: 15
-      ),
+      padding: EdgeInsets.symmetric(vertical: 100, horizontal: 15),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -38,10 +36,10 @@ class _AboutMobileState extends State<AboutMobile> {
                       TextSpan(
                         text: ' About Me',
                         style: GoogleFonts.robotoSlab(
-                            color: AppColors().textColor,
-                            letterSpacing: 1,
-                            fontWeight: FontWeight.bold,
-                            fontSize: AppSizes.titleSize,
+                          color: AppColors().textColor,
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.bold,
+                          fontSize: AppSizes.titleSize,
                         ),
                       )
                     ]),
@@ -119,6 +117,42 @@ class _AboutMobileState extends State<AboutMobile> {
                             Row(
                               children: [
                                 Icon(Icons.arrow_right),
+                                Text(Strings.tech5,
+                                    style: GoogleFonts.robotoFlex(
+                                      color: AppColors().textLight,
+                                      letterSpacing: 1,
+                                      height: 1.5,
+                                      fontSize: 14,
+                                    )),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.arrow_right),
+                                Text(Strings.tech6,
+                                    style: GoogleFonts.robotoFlex(
+                                      color: AppColors().textLight,
+                                      letterSpacing: 1,
+                                      height: 1.5,
+                                      fontSize: 14,
+                                    )),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.arrow_right),
+                                Text(Strings.tech7,
+                                    style: GoogleFonts.robotoFlex(
+                                      color: AppColors().textLight,
+                                      letterSpacing: 1,
+                                      height: 1.5,
+                                      fontSize: 14,
+                                    )),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.arrow_right),
                                 Text(Strings.tech1,
                                     style: GoogleFonts.robotoFlex(
                                       color: AppColors().textLight,
@@ -161,6 +195,21 @@ class _AboutMobileState extends State<AboutMobile> {
                                       letterSpacing: 1,
                                       height: 1.5,
                                       fontSize: 14,
+                                    )),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right,
+                                  color: AppColors().textLight,
+                                ),
+                                Text(Strings.tech8,
+                                    style: GoogleFonts.robotoFlex(
+                                      color: AppColors().textLight,
+                                      letterSpacing: 1,
+                                      height: 1.5,
+                                      fontSize: 17,
                                     )),
                               ],
                             ),

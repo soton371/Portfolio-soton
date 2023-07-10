@@ -22,6 +22,10 @@ class Strings {
   static final tech2 = ''' Flutter'''; // space for manual padding
   static final tech3 = ''' Serverpod'''; // space for manual padding
   static final tech4 = ''' PostgreSQL'''; // space for manual padding
+  static final tech5 = ''' Python'''; // space for manual padding
+  static final tech6 = ''' Django'''; // space for manual padding
+  static final tech7 = ''' MongoDB'''; // space for manual padding
+  static final tech8 = ''' Sqflite'''; // space for manual padding
 
   /* Exp screen contents */
   static final expCompName2 = '''Smart Software Ltd''';

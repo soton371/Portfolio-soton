@@ -117,6 +117,51 @@ class _AboutTabState extends State<AboutTab> {
                           children: [
                             Row(
                               children: [
+                                Icon(
+                                  Icons.arrow_right,
+                                  color: AppColors().textLight,
+                                ),
+                                Text(Strings.tech5,
+                                    style: GoogleFonts.robotoFlex(
+                                      color: AppColors().textLight,
+                                      letterSpacing: 1,
+                                      height: 1.5,
+                                      fontSize: 17,
+                                    )),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right,
+                                  color: AppColors().textLight,
+                                ),
+                                Text(Strings.tech6,
+                                    style: GoogleFonts.robotoFlex(
+                                      color: AppColors().textLight,
+                                      letterSpacing: 1,
+                                      height: 1.5,
+                                      fontSize: 17,
+                                    )),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right,
+                                  color: AppColors().textLight,
+                                ),
+                                Text(Strings.tech7,
+                                    style: GoogleFonts.robotoFlex(
+                                      color: AppColors().textLight,
+                                      letterSpacing: 1,
+                                      height: 1.5,
+                                      fontSize: 17,
+                                    )),
+                              ],
+                            ),
+                            Row(
+                              children: [
                                 Icon(Icons.arrow_right),
                                 Text(Strings.tech1,
                                     style: GoogleFonts.robotoFlex(
@@ -155,6 +200,21 @@ class _AboutTabState extends State<AboutTab> {
                               children: [
                                 Icon(Icons.arrow_right),
                                 Text(Strings.tech4,
+                                    style: GoogleFonts.robotoFlex(
+                                      color: AppColors().textLight,
+                                      letterSpacing: 1,
+                                      height: 1.5,
+                                      fontSize: 17,
+                                    )),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.arrow_right,
+                                  color: AppColors().textLight,
+                                ),
+                                Text(Strings.tech8,
                                     style: GoogleFonts.robotoFlex(
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
