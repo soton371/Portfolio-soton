@@ -114,13 +114,9 @@ class _WorkWebState extends ConsumerState<WorkTab> {
       },
       onHover: (bool) {
         if (bool) {
-          ref
-              .read(hoverProvider.notifier)
-              .state = "$index";
+          ref.read(hoverProvider.notifier).state = "$index";
         } else {
-          ref
-              .read(hoverProvider.notifier)
-              .state = "";
+          ref.read(hoverProvider.notifier).state = "";
         }
       },
       child: Consumer(builder: (context, ref, child) {
@@ -149,7 +145,9 @@ class _WorkWebState extends ConsumerState<WorkTab> {
                         'assets/svg/externalLink.svg',
                         width: 22,
                         height: 22,
-                        color: isHovered ? AppColors().neonColor : AppColors().textLight,
+                        color: isHovered
+                            ? AppColors().neonColor
+                            : AppColors().textLight,
                       ),
                     ],
                   ),
@@ -185,36 +183,6 @@ class _WorkWebState extends ConsumerState<WorkTab> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        AppClass().projectList[index].tech1.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
-                        ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech2.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
-                        ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech3.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),

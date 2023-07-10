@@ -182,35 +182,6 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        AppClass().projectList[index].tech1.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 10,
-                        ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech2.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 10,
-                        ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech3.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 10,
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),

@@ -154,7 +154,9 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                         'assets/svg/externalLink.svg',
                         width: 22,
                         height: 22,
-                        color: isHovered ? AppColors().neonColor : AppColors().textLight,
+                        color: isHovered
+                            ? AppColors().neonColor
+                            : AppColors().textLight,
                       ),
                     ],
                   ),
@@ -190,36 +192,6 @@ class _WorkWebState extends ConsumerState<WorkWeb> {
                       ),
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        AppClass().projectList[index].tech1.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
-                        ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech2.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          fontSize: 12,
-                        ),
-                      ),
-                      Text(
-                        AppClass().projectList[index].tech3.toString(),
-                        style: GoogleFonts.roboto(
-                          color: AppColors().textLight,
-                          letterSpacing: 1,
-                          height: 1.5,
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
