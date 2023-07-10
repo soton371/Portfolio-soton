@@ -209,7 +209,7 @@ class _AboutMobileState extends State<AboutMobile> {
                                       color: AppColors().textLight,
                                       letterSpacing: 1,
                                       height: 1.5,
-                                      fontSize: 17,
+                                      fontSize: 14,
                                     )),
                               ],
                             ),
