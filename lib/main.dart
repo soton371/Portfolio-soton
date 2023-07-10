@@ -18,11 +18,9 @@ class AppTheme extends StatelessWidget {
       title: 'Soton',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        // brightness: Brightness.dark,
         primaryColor: AppColors().primaryColor,
         useMaterial3: true
       ),
-      // home: const DemoScreen(),
       home: RootScreen(),
     );
   }
