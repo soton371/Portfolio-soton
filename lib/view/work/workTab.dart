@@ -131,6 +131,7 @@ class _WorkWebState extends ConsumerState<WorkTab> {
               padding: EdgeInsets.all(15.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -153,20 +154,18 @@ class _WorkWebState extends ConsumerState<WorkTab> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
-                    child: Row(
-                      children: [
-                        Text(
-                          AppClass().projectList[index].projectTitle.toString(),
-                          textAlign: TextAlign.left,
-                          style: GoogleFonts.robotoSlab(
-                              color: isHovered
-                                  ? AppColors().neonColor
-                                  : AppColors().textColor,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                      ],
+                    child: Text(
+                      AppClass().projectList[index].projectTitle.toString(),
+                      textAlign: TextAlign.left,
+                      maxLines: 1,
+                      overflow: TextOverflow.fade,
+                      style: GoogleFonts.robotoSlab(
+                          color: isHovered
+                              ? AppColors().neonColor
+                              : AppColors().textColor,
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
                     ),
                   ),
                   Expanded(
@@ -180,6 +179,8 @@ class _WorkWebState extends ConsumerState<WorkTab> {
                           height: 1.5,
                           fontSize: 14,
                         ),
+                        maxLines: 3,
+                        overflow: TextOverflow.fade,
                       ),
                     ),
                   ),

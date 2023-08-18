@@ -120,9 +120,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
         }
       },
       child: Consumer(builder: (context, ref, child) {
-        // bool isHovered = (data == "$index");
         return Container(
-          // margin: EdgeInsets.all(isHovered ? 8.0 : 0.0),
           child: Card(
             color: AppColors().cardColor,
             elevation: 1,
@@ -130,6 +128,7 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
               padding: EdgeInsets.all(15.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -151,21 +150,16 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 10.0, bottom: 8.0),
-                    child: Row(
-                      children: [
-                        Text(
-                          AppClass().projectList[index].projectTitle.toString(),
-                          textAlign: TextAlign.left,
-                          style: GoogleFonts.robotoSlab(
-                              color: AppColors().textColor,
-                              // color: isHovered
-                              //     ? AppColors().neonColor
-                              //     : AppColors().textColor,
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16),
-                        ),
-                      ],
+                    child: Text(
+                      AppClass().projectList[index].projectTitle.toString(),
+                      textAlign: TextAlign.left,
+                      style: GoogleFonts.robotoSlab(
+                          color: AppColors().textColor,
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Expanded(
@@ -179,6 +173,8 @@ class _WorkWebState extends ConsumerState<WorkMobile> {
                           height: 1.5,
                           fontSize: 12,
                         ),
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   ),
