@@ -29,7 +29,7 @@ class Strings {
 
   /* Exp screen contents */
   static final expCompName2 = '''Smart Software Ltd''';
-  static final expDesig2 = '''Jr. Software Engineer''';
+  static final expDesig2 = '''Associate Software Engineer''';
   static final expDur2 = '''Feb 2022 - Jul 2022''';
   static final expAbout2 =
       '''The company develops solutions that enable service providers to efficiently deliver high quality data services ''';
@@ -40,7 +40,7 @@ class Strings {
 
 
   static final expCompName3 = '''Ati Limited''';
-  static final expDesig3 = '''Associate Software Engineer''';
+  static final expDesig3 = '''Junior Flutter Developer''';
   static final expDur3 = '''Aug 2022 - Present''';
   static final expAbout3 =
       '''We love technology, because technology has the ability to solve many of our problems in a minute ''';

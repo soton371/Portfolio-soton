@@ -12,7 +12,7 @@ class AppClass {
 
   /* URL */
 
-  static final zappAppSocial = '''https://apps.apple.com/us/app/zappapp-social/id1618608968''';
+  static final zappAppSocial = '''https://apps.apple.com/us/app/xcel-medical-centre/id6449455026''';
   static final meekago = '''https://www.meekago.com/home''';
   static final smartDokani = '''https://play.google.com/store/apps/details?id=com.smartsoftwarebd.dokani&hl=en&gl=US''';
   static final medicalSurveyReport =
@@ -23,9 +23,9 @@ class AppClass {
 
   List<WorkModel> projectList = [
     WorkModel(
-        projectTitle: "ZappApp Social",
+        projectTitle: "Xcel Medical Centre",
         projectContent:
-            "ZappApp Social is an innovative App that focus on making life easier on the daily base for users.",
+            "Xcel Medical Centre is a digital telemedicine service from ATI Limited.It is a comprehensive solution with the outstanding looking and most efficient way to perform telemedicine activities.",
         tech1: "Dart",
         tech2: "Flutter",
         tech3: "Serverpod",
