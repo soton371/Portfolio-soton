@@ -20,7 +20,7 @@ dependencies:
   flutter_advanced_drawer: ^1.3.2
   url_strategy: ^0.2.0
   google_fonts: ^5.1.0
-  iconsax: ^0.0.8
+  # iconsax: ^0.0.8
 
 dev_dependencies:
   flutter_test:
@@ -33,6 +33,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/svg/
+    - assets/
 
   fonts:
     - family: sfmono

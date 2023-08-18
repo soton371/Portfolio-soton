@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
@@ -8,7 +9,6 @@ import 'package:portfolio/resource/colors.dart';
 import 'package:portfolio/view/about/about.dart';
 import 'package:portfolio/view/experience/experience.dart';
 import 'package:portfolio/view/intro/intro.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:portfolio/view/widget/leftPane.dart';
 import 'package:portfolio/view/widget/rightPane.dart';
 import 'package:portfolio/view/work/work.dart';
@@ -331,11 +331,11 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                         preferPosition: AutoScrollPosition.begin),
                     title: Row(
                       children: [
-                        Icon(Iconsax.user_octagon,size: scrType == ScreenType.mobile? 13:14),
+                        Image.asset("assets/profile.png", height: scrType == ScreenType.mobile? 14:15,width: scrType == ScreenType.mobile? 14:15,),
                         Text(' About',
                         style: TextStyle(
                             fontFamily: 'sfmono',
-                          fontSize: scrType == ScreenType.mobile? 13:14
+                          fontSize: scrType == ScreenType.mobile? 14:15
                         ),
                         ),
                       ],
@@ -344,13 +344,12 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                   ListTile(
                     onTap: () =>aScrollController.scrollToIndex(2,
                       preferPosition: AutoScrollPosition.begin),
-                    // leading: Icon(Iconsax.code,size: scrType == ScreenType.mobile? 13:14),
                     title: Row(
                       children: [
-                        Icon(Iconsax.code,size: scrType == ScreenType.mobile? 13:14),
+                        Image.asset("assets/experience.png", height: scrType == ScreenType.mobile? 14:15,width: scrType == ScreenType.mobile? 14:15,),
                         Text(' Experience',style: TextStyle(
                             fontFamily: 'sfmono',
-                            fontSize: scrType == ScreenType.mobile? 13:14
+                            fontSize: scrType == ScreenType.mobile? 14:15
                         ),),
                       ],
                     ),
@@ -358,13 +357,12 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                   ListTile(
                     onTap: () =>aScrollController.scrollToIndex(3,
                         preferPosition: AutoScrollPosition.begin),
-                    // leading: Icon(Iconsax.task_square,size: scrType == ScreenType.mobile? 13:14),
                     title: Row(
                       children: [
-                        Icon(Iconsax.task_square,size: scrType == ScreenType.mobile? 13:14),
+                        Image.asset("assets/working.png", height: scrType == ScreenType.mobile? 14:15,width: scrType == ScreenType.mobile? 14:15,),
                         Text(' Work',style: TextStyle(
                             fontFamily: 'sfmono',
-                            fontSize: scrType == ScreenType.mobile? 13:14
+                            fontSize: scrType == ScreenType.mobile? 14:15
                         ),),
                       ],
                     ),
@@ -372,13 +370,12 @@ class _RootScreenState extends ConsumerState<RootScreen> {
                   ListTile(
                     onTap: () =>aScrollController.scrollToIndex(4,
                         preferPosition: AutoScrollPosition.begin),
-                    // leading: Icon(Iconsax.message,size: scrType == ScreenType.mobile? 13:14,),
                     title: Row(
                       children: [
-                        Icon(Iconsax.message,size: scrType == ScreenType.mobile? 13:14,),
+                        Image.asset("assets/paper-plane.png", height: scrType == ScreenType.mobile? 14:15,width: scrType == ScreenType.mobile? 14:15,),
                         Text(' Contact',style: TextStyle(
                             fontFamily: 'sfmono',
-                            fontSize: scrType == ScreenType.mobile? 13:14
+                            fontSize: scrType == ScreenType.mobile? 14:15
                         ),),
                       ],
                     ),
